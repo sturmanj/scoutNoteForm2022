@@ -9,7 +9,7 @@
 		.map(p => p.split('='))
 		.reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
 	$data.scout = autoVal.scout
-	$data.event = autoVal.event 
+	$data.event = autoVal.event
 
 	function submit() {
 		console.log($data)

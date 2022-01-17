@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 export const data = writable({
-  userId: '',
+  scout: '',
   event: '',
   notes: ''
 })
