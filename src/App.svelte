@@ -1,5 +1,5 @@
 <script>
-	//http://localhost:8080?scout=1a2b3c&event=BB2022
+	//http://localhost:8080?scout=1a2b3c&team=1540&event=BB2022
 
 	import { data } from "./stores.js";
 
@@ -10,8 +10,16 @@
 		.reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
 	$data.scout = autoVal.scout
 	$data.event = autoVal.event
+	$data.team = autoVal.team
+	if ($data.team == '') {
+		$data.team = 0
+	}
+	
 
 	function submit() {
+		if (data.team != '') {
+			data.team = 0;
+		}
 		console.log($data)
 		//make the page unusable from here, probably put a close message and chicken animation.
 	}
