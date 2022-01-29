@@ -1,5 +1,5 @@
 <script>
-	//http://localhost:8080?scout=1a2b3c&team=1540&event=BB2022
+	//http://localhost:8080?scout=1a2b3c&eventId=BB2022
 
 	import { data } from "./stores.js";
 
@@ -9,11 +9,7 @@
 		.map(p => p.split('='))
 		.reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
 	$data.scout = autoVal.scout
-	$data.event = autoVal.event
-	$data.team = autoVal.team
-	if ($data.team == '') {
-		$data.team = 0
-	}
+	$data.eventId = autoVal.eventId
 	
 
 	function submit() {
@@ -27,14 +23,14 @@
 
 <div>
 	<h1>notes</h1>
-	<textarea placeholder = "Write your notes here..." bind:value={$data.notes} ></textarea>
+	<textarea placeholder = "Write your notes here... " bind:value={$data.notes} ></textarea>
 	<p> </p>
 	<button on:click={submit}>submit</button>
 </div>
 
 <style>
 	textarea {
-		width: 100%; height: 300px;
+		width: 100%; height: 300px
 	}
 
 	div {
